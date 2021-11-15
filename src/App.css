@@ -1,38 +1,228 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Mada&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Mada:wght@400;900&family=Roboto:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary: #121318;
+  --secondary-dark-dark: #86003c;
+  --secondary-dark: #d1186b;
+  --secondary-light: #e41f7b;
+  --secondary-light-light: #ff8ba0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: var(--primary);
+  font-family: "Roboto", sans-serif;
+  font-family: "Kanit", sans-serif;
+  font-family: "Mada", sans-serif;
+  overflow: auto;
+  overflow-x: hidden;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
   display: flex;
   flex-direction: column;
+}
+.banner {
+  height: 100vh;
+}
+.navigation {
+  color: var(--secondary-light);
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 10%;
+  justify-content: space-evenly;
+  margin-left: 33%;
+  margin-top: 2%;
+  font-size: 1rem;
+}
+.navigation > li:hover {
+  cursor: pointer;
+  color: var(--secondary-light-light);
+}
+.introduction {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  margin-top: 8%;
+}
+.bio {
+  width: 45%;
+}
+.iam {
+  font-size: 1.5rem;
+  color: var(--secondary-light-light);
+}
+.name {
+  font-size: 3.5rem;
+  color: var(--secondary-light);
+  font-family: "Mada";
+  font-weight: 600;
+  font-size: 5rem;
+}
+.fsd {
+  font-size: 1.7rem;
+  color: var(--secondary-dark);
+}
+.intro {
+  font-size: 1.5rem;
+  color: var(--secondary-light-light);
+}
+.projects,
+.about-me-section,
+.contact-me {
+  display: flex;
+  flex-direction: column;
+  padding: 3.5rem;
+}
+.projects-title,
+.contact-me-title,
+.about-me-section > header {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--secondary-light);
+}
+.project,
+.about-me-subsection {
+  margin: 1rem;
+  margin-left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #302d2d70;
+  padding: 3%;
+  border-radius: 10px;
+}
+.about-me-subsection {
+  border: none;
+  padding-left: 0;
+}
+.project_info {
+  width: 60%;
+}
+.project_info > header {
+  font-size: 2rem;
+  color: var(--secondary-dark);
+}
+.stack-used img + img {
+  margin-left: 3%;
+}
+.stack-used img {
+  margin-top: 3%;
+}
+.project-details {
+  width: 90%;
+  margin-top: 2%;
+  color: #ffff;
+  opacity: 0.8;
+}
+.project-video {
+  background-image: url("./images/monitor.png");
+  width: 89%;
+  height: 458px;
+  position: relative;
+}
+.project-video > video {
+  position: absolute;
+  object-fit: cover;
+  width: 77%;
+  height: 70%;
+  left: 68px;
+  top: 4%;
+}
+.website-logo,
+.github-logo {
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+}
+.about-me-info {
+  width: 60%;
+  color: #ffff;
+  opacity: 0.8;
+}
+.contact-section {
+  display: flex;
+  flex-direction: row;
+}
+.contact-me div {
+  font-size: 1.5rem;
+  color: var(--secondary-light-light);
+}
+.contact-me {
+  width: 63%;
+}
+.contact-me * {
+  margin-top: 1rem;
+}
+.contact-me input,
+.contact-me textarea {
+  width: 80%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: #ede0e024;
+  color: #ffff;
+  opacity: 0.8;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 4px;
+}
+.contact-me input:focus {
+  outline: 2px solid var(--secondary-light-light);
+}
+.contact-me textarea {
+  height: 200px;
+}
+.contact-me button {
+  padding: 10px;
+  border-radius: 15px;
+  width: 100px;
+  background: var(--secondary-dark);
+  color: #ffff;
+  border: none;
+}
+.contact-me button:hover {
+  background: var(--secondary-light-light);
+}
+.cta {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.cta > header {
+  font-size: 1.4rem;
+  color: var(--secondary-light);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.connection-links img {
+  width: 50px;
+  height: 46px;
+  margin: 1.5rem;
+}
+.contact {
+  width: 40px;
+  height: 40px;
+}
+.other-details {
+  margin-top: 15rem;
+  color: var(--secondary-light);
+  font-size: 1.8rem;
+  flex-direction: column;
+}
+.other-details-1,
+.other-details-2 {
+  display: flex;
+  flex-direction: row;
+}
+.other-details-1 *,
+.other-details-2 * {
+  margin: 20px;
 }
