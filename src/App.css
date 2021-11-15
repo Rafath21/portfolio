@@ -124,6 +124,7 @@ body {
 }
 .project-video {
   background-image: url("./images/monitor.png");
+  background-repeat: no-repeat;
   width: 89%;
   height: 458px;
   position: relative;
@@ -225,4 +226,71 @@ body {
 .other-details-1 *,
 .other-details-2 * {
   margin: 20px;
+}
+@media screen and (max-width: 900px) {
+  .introduction {
+    flex-direction: column-reverse;
+    margin-left: 8%;
+  }
+  .bio {
+    width: 100%;
+  }
+  .name {
+    font-size: 3rem;
+  }
+  .projects {
+    margin-left: 7%;
+    width: 100%;
+    padding: 0;
+  }
+  .project {
+    width: 100%;
+    flex-direction: column;
+  }
+  .project_info {
+    width: 100%;
+  }
+  .about-me-subsection {
+    flex-direction: column;
+  }
+  .projects-title,
+  .contact-me-title,
+  .about-me-section > header {
+    font-size: 1.7rem;
+  }
+  .project_info > header {
+    font-size: 1.6rem;
+  }
+  .about-me-info {
+    width: 128%;
+  }
+  .contact-section {
+    flex-direction: column;
+  }
+  .contact-me input,
+  .contact-me textarea {
+    width: 100%;
+  }
+  .contact-me {
+    width: 100%;
+  }
+  .contact-me div {
+    font-size: 1.3rem;
+  }
+  .other-details {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  .project-video {
+    background-image: url("./images/monitor-resp.png");
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 250px;
+  }
+  .project-video > video {
+    left: 33px;
+    top: 8px;
+    height: 67%;
+    width: 80%;
+  }
 }
