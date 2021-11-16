@@ -10,7 +10,25 @@
   --secondary-dark-dark: #86003c;
   --secondary-dark: #d1186b;
   --secondary-light: #e41f7b;
-  --secondary-light-light: #ff8ba0;
+  --secondary-light-light: #f8e2e6;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-dark) var(--secondary-light);
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0f1724;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-light);
+  border-radius: 50px;
+  border: 3px solid #0f1724;
 }
 body {
   background: var(--primary);
@@ -22,7 +40,13 @@ body {
   animation-name: fade;
   animation-duration: 3s;
 }
-
+b {
+  color: #e41f7b;
+}
+h5 {
+  font-size: 1.3rem;
+  color: var(--secondary-light);
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -43,7 +67,7 @@ body {
   position: relative !important;
 }
 
-.navigation {
+.nav-links {
   color: var(--secondary-light);
   list-style: none;
   display: flex;
@@ -55,9 +79,17 @@ body {
   margin-top: 2%;
   font-size: 1.4rem;
 }
-.navigation > li:hover {
+#menu {
+  display: none;
+}
+.nav-links a {
+  color: var(--secondary-light);
+  text-decoration: none;
+}
+.nav-links a:hover {
   cursor: pointer;
-  color: var(--secondary-light-light);
+  color: var(--secondary-light-light) !important;
+  text-decoration: none;
 }
 .introduction {
   margin-left: 5%;
@@ -67,6 +99,13 @@ body {
   align-items: center;
   width: 100%;
   margin-top: 8%;
+}
+.project {
+  justify-content: center;
+  align-items: center;
+}
+.project-details li {
+  list-style: square;
 }
 .bio {
   width: 45%;
@@ -89,14 +128,19 @@ body {
 }
 .intro {
   font-size: 1.5rem;
-  color: var(--secondary-light-light);
+  color: #e56a9d;
+}
+#projects,
+#home,
+#contact-me,
+#about-me {
+  padding: 3.5rem;
 }
 .projects,
 .about-me-section,
 .contact-me {
   display: flex;
   flex-direction: column;
-  padding: 3.5rem;
   animation-name: fade;
   animation-duration: 3s;
 }
@@ -167,12 +211,12 @@ body {
 }
 .website-logo,
 .github-logo {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   margin: 10px;
 }
 .about-me-info {
-  width: 60%;
+  width: 50%;
   color: #ffff;
   opacity: 0.8;
 }
@@ -280,7 +324,7 @@ body {
   .name {
     font-size: 3rem;
   }
-  .projects {
+  #projects {
     margin-left: 7%;
     width: 100%;
     padding: 0;
@@ -334,5 +378,45 @@ body {
     top: 8px;
     height: 67%;
     width: 80%;
+  }
+  .project:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+  .project:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+  #menu {
+    display: inline;
+    color: var(--secondary-dark);
+    position: absolute;
+    right: 1rem;
+    top: 8px;
+    font-size: 2rem;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 80px;
+    left: -100%;
+    transition: 0.5s all;
+  }
+  .nav-links > li {
+    display: inline-flex;
+  }
+  .nav-links.active {
+    background: rgb(51, 51, 51);
+    color: white;
+    z-index: 100;
+    padding-bottom: 30px;
+    top: 7vh;
+    width: 100%;
+    left: -31%;
+    height: 70%;
+  }
+  .introduction {
+    margin-top: 41%;
   }
 }

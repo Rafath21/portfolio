@@ -1,7 +1,10 @@
 import React from "react";
 import "./App.css";
 import Particles from "react-tsparticles";
+import data from "./data";
+import { useState } from "react";
 const Home = () => {
+  let [menuOpen, setmenuOpen] = useState(false);
   return (
     <div className="main">
       <div className="banner">
@@ -86,268 +89,164 @@ const Home = () => {
             detectRetina: true,
           }}
         />
-        <nav className="navigation">
-          <li>Home</li>
-          <li>Projects</li>
-          <li>About Me</li>
-          <li>Contact Me</li>
-          <li>Resume</li>
+        <nav className={menuOpen ? "nav-links active" : "nav-links"}>
+          <a href="#projects">
+            <li>Projects</li>
+          </a>
+          <a href="#about-me">
+            <li>About Me</li>
+          </a>
+          <a href="#contact-me">
+            <li>Contact Me</li>
+          </a>
         </nav>
-        <div className="introduction">
-          <div className="bio">
-            <div className="iam">Hi, I'm</div>
-            <div className="name">Rafath Unnisa.</div>
-            <div className="fsd">A full-stack developer based in India.</div>
-            <div className="intro">
-              I have a serious passion for building websites that make lives
-              easier for human kind.
+        <i
+          class="fas fa-bars"
+          id="menu"
+          onClick={() => {
+            if (!menuOpen) setmenuOpen(true);
+            else setmenuOpen(false);
+          }}
+        ></i>
+        <a id="home">
+          <div className="introduction">
+            <div className="bio">
+              <div className="iam">Hi, I'm</div>
+              <div className="name">Rafath Unnisa.</div>
+              <div className="fsd">A full-stack developer based in India.</div>
+              <div className="intro">
+                I have a serious passion for building websites. My mission is to
+                use code to bring to life the ideas that can have a great and
+                positive impact on people's lives.
+              </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
-      <div className="projects">
-        <div className="projects-title">Favorite Projects</div>
-        <div className="project">
-          <div className="project_info">
-            <header>01. Crime Mapper</header>
-            <div className="stack-used">
-              <img src="./reactjs.png"></img>
-              <img src="./nodejs.png"></img>
-              <img src="./mongodb.png"></img>
-              <img src="./expressjs.png"></img>
+      <a id="projects">
+        <div className="projects">
+          <div className="projects-title">Favorite Projects</div>
+          {data?.map((project) => {
+            return (
+              <div className="project">
+                <div className="project_info">
+                  <header>
+                    {project.serialNo} {project.projectTitle}
+                  </header>
+                  <div className="stack-used">
+                    {project.stackUsed.map((stack) => {
+                      return <img src={stack}></img>;
+                    })}
+                  </div>
+                  <div className="project-details">
+                    <>
+                      <h5>Goal:</h5>
+                      <p>{project.goal}</p>
+                      <h5>Features:</h5>
+                      <ul>
+                        {project.features.map((feature) => {
+                          return <li>{feature}</li>;
+                        })}
+                      </ul>
+                    </>
+                  </div>
+                  <div className="project-links">
+                    <a href={project.links[0]} target="_blank">
+                      <img
+                        src="./github.png"
+                        className="github-logo"
+                        title="Github link"
+                      />
+                    </a>
+                    <a href={project.links[1]} target="_blank">
+                      <img
+                        src="./website.png"
+                        className="website-logo"
+                        title="Go to website"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="project-video">
+                  <video controls muted autoplay="true" loop="true">
+                    <source src={project.video} type="video/mp4"></source>
+                  </video>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </a>
+      <a id="about-me">
+        <div className="about-me-section">
+          <header>Know Me Better</header>
+          <div className="about-me-subsection">
+            <div className="about-me-info">
+              Graduated with an <b>8.4 cgpa</b> in Computer Science Engineering
+              from MJCET, Hyderabad (2017-2021).<br></br>
+              Like every programmer, I had my "That's it. This is what I wanna
+              do for the rest of my life" moment too. With a 96% in 12th
+              standard, I was a teenager with the vision to do something that
+              makes a difference.<br></br>
+              <br></br>
+              As a programmer, my focus is always on building the{" "}
+              <b>most efficient and robust applications</b>. With a big
+              application, comes a huge responsibility of making it as robust as
+              possible to make sure it doesn't crash at any point in time. With
+              the wide range of projects I've built <b>over the past 3 years</b>
+              , I learned the art of solving unexpected errors and handling them
+              so that the user knows what went wrong and where. I also make sure
+              the code is <b>readable, clean, and maintainable</b> for other
+              developers to understand with ease. Also, I took my developer
+              <b>
+                {" "}
+                training from industry experts at Pepcoding for 8 months
+              </b>{" "}
+              in my last year of Engineering which enabled me to gain enough
+              skills to make usable and maintainable full-stack applications.
+              <br></br>
+              <br></br>
+              Though I'm a full-stack developer who specializes in MERN stack, I
+              have also built projects in java. From some mini projects like a
+              basic calculator using collections and swing framework and a
+              university management system using <b>JDBC and MySQL</b> to
+              writing the frontend of an <b>e-commerce android application</b>{" "}
+              using firebase in the early years of my engineering. I love
+              bringing ideas to life using code. It's a very satisfactory
+              feeling when you know the project you built can help millions of
+              people out there. After all, programming is just a tool, the real
+              challenge is to solve problems that we face in our day-to-day
+              lives.
             </div>
-            <div className="project-details">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              veritatis magni quos iusto nisi cum eum delectus minima ipsa! Eius
-              accusantium vitae architecto amet blanditiis? Mollitia maxime
-              omnis alias laudantium? Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Ab illum doloribus beatae saepe placeat omnis
-              impedit repellendus rerum exercitationem quibusdam soluta sint eum
-              facere, et, quidem eaque corrupti inventore maxime. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Dolore nihil
-              nesciunt, alias vitae quos dolorem rerum ab similique ducimus id
-              nobis ut iure, eligendi mollitia earum omnis deleniti! Iusto,
-              modi!
-            </div>
-            <div className="project-links">
-              <a
-                href="https://github.com/Rafath21/crime-mapper-mern"
-                target="_blank"
-              >
-                <img
-                  src="./github.png"
-                  className="github-logo"
-                  title="Github link"
-                />
-              </a>
-              <a href="https://crime-mapper.herokuapp.com/" target="_blank">
-                <img
-                  src="./website.png"
-                  className="website-logo"
-                  title="Go to website"
-                />
-              </a>
-            </div>
-          </div>
-          <div className="project-video">
-            <video controls autoplay="true" loop="true">
-              <source src="./crime-mapper.mp4" type="video/mp4"></source>
-            </video>
+            <div className="about-me-picture"></div>
           </div>
         </div>
-        <div className="project">
-          <div className="project_info">
-            <header>02. Social Media - clone</header>
-            <div className="stack-used">
-              <img src="./reactjs.png"></img>
-              <img src="./nodejs.png"></img>
-              <img src="./mongodb.png"></img>
-              <img src="./expressjs.png"></img>
-            </div>
-            <div className="project-details">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              veritatis magni quos iusto nisi cum eum delectus minima ipsa! Eius
-              accusantium vitae architecto amet blanditiis? Mollitia maxime
-              omnis alias laudantium? Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Ab illum doloribus beatae saepe placeat omnis
-              impedit repellendus rerum exercitationem quibusdam soluta sint eum
-              facere, et, quidem eaque corrupti inventore maxime. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Dolore nihil
-              nesciunt, alias vitae quos dolorem rerum ab similique ducimus id
-              nobis ut iure, eligendi mollitia earum omnis deleniti! Iusto,
-              modi!
-            </div>
-            <div className="project-links">
-              <a
-                href="https://github.com/Rafath21/instagram-clone-mern"
-                target="_blank"
-              >
-                <img
-                  src="./github.png"
-                  className="github-logo"
-                  title="Github link"
-                />
-              </a>
-              <a
-                href="https://instagramclone-byrafath.herokuapp.com/"
-                target="_blank"
-              >
-                <img
-                  src="./website.png"
-                  className="website-logo"
-                  title="Go to website"
-                />
-              </a>
-            </div>
+      </a>
+      <a id="contact-me">
+        <div className="contact-section">
+          <div className="contact-me">
+            <header className="contact-me-title">Let's get in touch?</header>
+            <div className="label">Name</div>
+            <input type="text" />
+            <div className="label">Email</div>
+            <input type="text" />
+            <div className="label">Message</div>
+            <textarea></textarea>
+            <button>Submit</button>
+            <form></form>
           </div>
-          <div className="project-video">
-            <video controls muted autoplay="true" loop="true">
-              <source src="./instagram-clone.mp4" type="video/mp4"></source>
-            </video>
+          <div className="other-details">
+            <div className="other-details-1">
+              <img src="./mail-logo.png" className="contact" />
+              <p>rafathsweb@gmail.com</p>
+            </div>
+            <div className="other-details-2">
+              <img src="./location-icon.png" className="contact" />
+              <p>Hyderabad, India.</p>
+            </div>
           </div>
         </div>
-        <div className="project">
-          <div className="project_info">
-            <header>03. Book Sharing- App</header>
-            <div className="stack-used">
-              <img src="./reactjs.png"></img>
-              <img src="./nodejs.png"></img>
-              <img src="./mongodb.png"></img>
-              <img src="./expressjs.png"></img>
-            </div>
-            <div className="project-details">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              veritatis magni quos iusto nisi cum eum delectus minima ipsa! Eius
-              accusantium vitae architecto amet blanditiis? Mollitia maxime
-              omnis alias laudantium? Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Ab illum doloribus beatae saepe placeat omnis
-              impedit repellendus rerum exercitationem quibusdam soluta sint eum
-              facere, et, quidem eaque corrupti inventore maxime. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Dolore nihil
-              nesciunt, alias vitae quos dolorem rerum ab similique ducimus id
-              nobis ut iure, eligendi mollitia earum omnis deleniti! Iusto,
-              modi!
-            </div>
-            <div className="project-links">
-              <a
-                href="https://github.com/Rafath21/book-sharing-system"
-                target="_blank"
-              >
-                <img
-                  src="./github.png"
-                  className="github-logo"
-                  title="Github link"
-                />
-              </a>
-              <a
-                href="https://booksharing-system.herokuapp.com/"
-                target="_blank"
-              >
-                <img
-                  src="./website.png"
-                  className="website-logo"
-                  title="Go to website"
-                />
-              </a>
-            </div>
-          </div>
-          <div className="project-video">
-            <video controls loop="true">
-              <source src="./bookstore.mp4" type="video/mp4"></source>
-            </video>
-          </div>
-        </div>
-        <div className="project">
-          <div className="project_info">
-            <header>04. Apple website - clone</header>
-            <div className="stack-used">
-              <img src="./reactjs.png"></img>
-              <img src="./nodejs.png"></img>
-              <img src="./mongodb.png"></img>
-              <img src="./expressjs.png"></img>
-            </div>
-            <div className="project-details">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              veritatis magni quos iusto nisi cum eum delectus minima ipsa! Eius
-              accusantium vitae architecto amet blanditiis? Mollitia maxime
-              omnis alias laudantium? Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Ab illum doloribus beatae saepe placeat omnis
-              impedit repellendus rerum exercitationem quibusdam soluta sint eum
-              facere, et, quidem eaque corrupti inventore maxime. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Dolore nihil
-              nesciunt, alias vitae quos dolorem rerum ab similique ducimus id
-              nobis ut iure, eligendi mollitia earum omnis deleniti! Iusto,
-              modi!
-            </div>
-            <div className="project-links">
-              <a href="https://github.com/Rafath21/apple-clone" target="_blank">
-                <img
-                  src="./github.png"
-                  className="github-logo"
-                  title="Github link"
-                />
-              </a>
-              <a href="https://apple-clone-3ac22.web.app/" target="_blank">
-                <img
-                  src="./website.png"
-                  className="website-logo"
-                  title="Go to website"
-                />
-              </a>
-            </div>
-          </div>
-          <div className="project-video">
-            <video controls autoplay="true" loop="true">
-              <source src="./apple-clone.mp4" type="video/mp4"></source>
-            </video>
-          </div>
-        </div>
-      </div>
-      <div className="about-me-section">
-        <header>Know Me Better</header>
-        <div className="about-me-subsection">
-          <div className="about-me-info">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ex
-            hic neque corporis qui minus dicta fugit, voluptatem atque magni
-            quae doloribus ea dolor at repudiandae impedit quaerat. Labore,
-            iure! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eveniet iusto, mollitia vitae inventore tempora aliquid hic sapiente
-            exercitationem impedit corporis repellat molestiae voluptatum maxime
-            tenetur itaque ducimus delectus officia distinctio? Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Iure, cupiditate quis
-            sunt fugiat beatae impedit alias consequatur. Officiis quas possimus
-            optio corrupti eaque nobis exercitationem? Assumenda quas porro
-            expedita tempora! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Maxime soluta error eaque. Odit aperiam labore eum pariatur,
-            veniam nostrum nemo, eveniet ullam, esse delectus repudiandae
-            accusamus cupiditate iste sit necessitatibus.
-          </div>
-          <div className="about-me-picture"></div>
-        </div>
-      </div>
-      <div className="contact-section">
-        <div className="contact-me">
-          <header className="contact-me-title">Let's get in touch?</header>
-          <div className="label">Name</div>
-          <input type="text" />
-          <div className="label">Email</div>
-          <input type="text" />
-          <div className="label">Message</div>
-          <textarea></textarea>
-          <button>Submit</button>
-          <form></form>
-        </div>
-        <div className="other-details">
-          <div className="other-details-1">
-            <img src="./mail-logo.png" className="contact" />
-            <p>rafathsweb@gmail.com</p>
-          </div>
-          <div className="other-details-2">
-            <img src="./location-icon.png" className="contact" />
-            <p>Hyderabad, India.</p>
-          </div>
-        </div>
-      </div>
+      </a>
       <div className="cta">
         <header>Also find me on:</header>
         <div className="connection-links">
