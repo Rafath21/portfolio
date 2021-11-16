@@ -19,14 +19,30 @@ body {
   font-family: "Mada", sans-serif;
   overflow: auto;
   overflow-x: hidden;
+  animation-name: fade;
+  animation-duration: 3s;
 }
+
 .main {
   display: flex;
   flex-direction: column;
 }
 .banner {
   height: 100vh;
+  position: relative;
 }
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100vh !important;
+}
+.tsparticles-canvas-el {
+  height: 100vh !important;
+  position: relative !important;
+}
+
 .navigation {
   color: var(--secondary-light);
   list-style: none;
@@ -37,7 +53,7 @@ body {
   justify-content: space-evenly;
   margin-left: 33%;
   margin-top: 2%;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 .navigation > li:hover {
   cursor: pointer;
@@ -61,11 +77,12 @@ body {
 }
 .name {
   font-size: 3.5rem;
-  color: var(--secondary-light);
   font-family: "Mada";
   font-weight: 600;
   font-size: 5rem;
+  color: #fda8b8;
 }
+
 .fsd {
   font-size: 1.7rem;
   color: var(--secondary-dark);
@@ -80,6 +97,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 3.5rem;
+  animation-name: fade;
+  animation-duration: 3s;
 }
 .projects-title,
 .contact-me-title,
@@ -88,6 +107,7 @@ body {
   font-weight: 600;
   color: var(--secondary-light);
 }
+
 .project,
 .about-me-subsection {
   margin: 1rem;
@@ -98,6 +118,14 @@ body {
   border: 2px solid #302d2d70;
   padding: 3%;
   border-radius: 10px;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+.project:nth-child(even) {
+  flex-direction: row;
+}
+.project:nth-child(odd) {
+  flex-direction: row-reverse;
 }
 .about-me-subsection {
   border: none;
@@ -226,6 +254,20 @@ body {
 .other-details-1 *,
 .other-details-2 * {
   margin: 20px;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 900px) {
   .introduction {

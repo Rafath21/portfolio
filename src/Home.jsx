@@ -1,9 +1,91 @@
 import React from "react";
 import "./App.css";
+import Particles from "react-tsparticles";
 const Home = () => {
   return (
     <div className="main">
       <div className="banner">
+        <Particles
+          className="particles"
+          id="tsparticles"
+          options={{
+            background: {
+              color: {
+                value: "#121318",
+              },
+            },
+            fpsLimit: 60,
+            interactivity: {
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: "push",
+                },
+                onHover: {
+                  enable: true,
+                  mode: "repulse",
+                },
+                resize: true,
+              },
+              modes: {
+                bubble: {
+                  distance: 400,
+                  duration: 7,
+                  opacity: 0.8,
+                  size: 30,
+                },
+                push: {
+                  quantity: 3,
+                },
+                repulse: {
+                  distance: 200,
+                  duration: 0.4,
+                },
+              },
+            },
+            particles: {
+              color: {
+                value: "#ffffff",
+              },
+              links: {
+                color: "#ffffff",
+                distance: 150,
+                enable: true,
+                opacity: 0.5,
+                width: 1,
+              },
+              collisions: {
+                enable: true,
+              },
+              move: {
+                direction: "none",
+                enable: true,
+                outMode: "bounce",
+                random: false,
+                speed: 2,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  value_area: 800,
+                },
+                value: 30,
+              },
+              opacity: {
+                value: 0.5,
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                random: true,
+                value: 5,
+              },
+            },
+            detectRetina: true,
+          }}
+        />
         <nav className="navigation">
           <li>Home</li>
           <li>Projects</li>
