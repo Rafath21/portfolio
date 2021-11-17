@@ -1,10 +1,33 @@
 import React from "react";
+import { useRef } from "react";
 import "./App.css";
 import Particles from "react-tsparticles";
+import emailjs from "emailjs-com";
 import data from "./data";
 import { useState } from "react";
+import apiKey from "./config";
 const Home = () => {
   let [menuOpen, setmenuOpen] = useState(false);
+  let form = useRef();
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        apiKey.SERVICE_ID,
+        apiKey.TEMPLATE_ID,
+        form.current,
+        apiKey.USER_ID
+      )
+      .then(
+        (result) => {
+          alert("Email sent!");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
   return (
     <div className="main">
       <div className="banner">
@@ -200,7 +223,11 @@ const Home = () => {
               developers to understand with ease. Also, I took my developer
               <b>
                 {" "}
-                training from industry experts at Pepcoding for 8 months
+                training from industry experts at{" "}
+                <a href="https://pepcoding.com/" target="_blank">
+                  Pepcoding
+                </a>{" "}
+                for 10 months
               </b>{" "}
               in my last year of Engineering which enabled me to gain enough
               skills to make usable and maintainable full-stack applications.
@@ -218,7 +245,9 @@ const Home = () => {
               challenge is to solve problems that we face in our day-to-day
               lives.
             </div>
-            <div className="about-me-picture"></div>
+            <div className="about-me-picture">
+              <img src="./rafath.jpg" className="myImg" />
+            </div>
           </div>
         </div>
       </a>
@@ -226,14 +255,18 @@ const Home = () => {
         <div className="contact-section">
           <div className="contact-me">
             <header className="contact-me-title">Let's get in touch?</header>
-            <div className="label">Name</div>
-            <input type="text" />
-            <div className="label">Email</div>
-            <input type="text" />
-            <div className="label">Message</div>
-            <textarea></textarea>
-            <button>Submit</button>
-            <form></form>
+            <form ref={form} onSubmit={sendEmail}>
+              <label>Name</label>
+              <br></br>
+              <input type="text" name="user_name" />
+              <br></br>
+              <label>Email</label>
+              <br></br>
+              <input type="email" name="user_email" /> <br></br>
+              <label>Message</label> <br></br>
+              <textarea name="message" />
+              <input type="submit" value="Send" className="submit-btn" />
+            </form>
           </div>
           <div className="other-details">
             <div className="other-details-1">

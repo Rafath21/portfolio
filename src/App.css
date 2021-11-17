@@ -10,7 +10,7 @@
   --secondary-dark-dark: #86003c;
   --secondary-dark: #d1186b;
   --secondary-light: #e41f7b;
-  --secondary-light-light: #f8e2e6;
+  --secondary-light-light: #ee71af;
 }
 * {
   scrollbar-width: thin;
@@ -62,6 +62,14 @@ h5 {
   z-index: -1;
   height: 100vh !important;
 }
+.myImg {
+  width: 300px;
+  opacity: 85%;
+  margin-left: 222px;
+}
+.myImg:hover {
+  filter: hue-rotate(309deg);
+}
 .tsparticles-canvas-el {
   height: 100vh !important;
   position: relative !important;
@@ -85,6 +93,7 @@ h5 {
 .nav-links a {
   color: var(--secondary-light);
   text-decoration: none;
+  font-weight: 600;
 }
 .nav-links a:hover {
   cursor: pointer;
@@ -224,7 +233,7 @@ h5 {
   display: flex;
   flex-direction: row;
 }
-.contact-me div {
+.contact-me label {
   font-size: 1.5rem;
   color: var(--secondary-light-light);
 }
@@ -253,16 +262,16 @@ h5 {
 .contact-me textarea {
   height: 200px;
 }
-.contact-me button {
+.submit-btn {
   padding: 10px;
   border-radius: 15px;
   width: 100px;
-  background: var(--secondary-dark);
-  color: #ffff;
+  background: var(--secondary-dark) !important;
+  color: #ffff !important;
   border: none;
 }
-.contact-me button:hover {
-  background: var(--secondary-light-light);
+.submit-btn:hover {
+  background: var(--secondary-light-light) !important;
 }
 .cta {
   padding: 3.5rem;
@@ -418,5 +427,12 @@ h5 {
   }
   .introduction {
     margin-top: 41%;
+  }
+  .about-me-subsection {
+    flex-direction: column-reverse;
+  }
+  .myImg {
+    width: 250px;
+    margin-left: 0;
   }
 }
