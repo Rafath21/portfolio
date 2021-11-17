@@ -142,7 +142,12 @@ const Home = () => {
                 use code to bring to life the ideas that can have a great and
                 positive impact on people's lives.
               </div>
-              <button>Resume</button>
+              <a
+                href="https://drive.google.com/file/d/1hfCka-BQbs0zDFxfTx-Im-NQR6utjOxf/view?usp=sharing"
+                target="_blank"
+              >
+                <button>Resume</button>
+              </a>
             </div>
           </div>
         </a>
