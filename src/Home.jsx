@@ -5,7 +5,6 @@ import Particles from "react-tsparticles";
 import emailjs from "emailjs-com";
 import data from "./data";
 import { useState } from "react";
-import apiKey from "./config";
 const Home = () => {
   let [menuOpen, setmenuOpen] = useState(false);
   let form = useRef();
@@ -13,10 +12,10 @@ const Home = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        apiKey.SERVICE_ID,
-        apiKey.TEMPLATE_ID,
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
         form.current,
-        apiKey.USER_ID
+        process.env.REACT_APP_USER_ID
       )
       .then(
         (result) => {
