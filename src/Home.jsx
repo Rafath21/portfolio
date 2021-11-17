@@ -216,12 +216,13 @@ const Home = () => {
               <br></br>
               As a programmer, my focus is always on building the{" "}
               <b>most efficient and robust applications</b>. With a big
-              application, comes a huge responsibility of making it as robust as
-              possible to make sure it doesn't crash at any point in time. With
-              the wide range of projects I've built <b>over the past 3 years</b>
-              , I learned the art of solving unexpected errors and handling them
-              so that the user knows what went wrong and where. An example of
-              which can be found{" "}
+              application, comes a huge responsibility of solving problems
+              efficiently and making it as robust as possible to make sure it
+              doesn't crash at any point in time. With the wide range of
+              projects I've built <b>over the past 3 years</b>, I learned the
+              art of solving unexpected errors and handling them so that the
+              user knows what went wrong and where. An example of which can be
+              found{" "}
               <a
                 href="https://github.com/Rafath21/instagram-clone-firebase/blob/main/tests.txt"
                 target="_blank"
