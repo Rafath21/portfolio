@@ -40,6 +40,30 @@ body {
   animation-name: fade;
   animation-duration: 3s;
 }
+.bio button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 5px;
+  background: var(--primary);
+  color: var(--secondary-dark-dark);
+  border: 2px dashed #ee71af;
+}
+.bio button:hover {
+  background: #e56a9d;
+  color: #0f1724;
+}
+.madeby {
+  color: #e41f7b;
+  margin-left: 40%;
+}
+.copyright {
+  color: #ffff;
+  margin-left: 40%;
+}
+.logo {
+  margin-left: -40rem;
+}
 b {
   color: #e41f7b;
 }
@@ -433,6 +457,10 @@ h5 {
   }
   .myImg {
     width: 250px;
+    margin-left: 0;
+  }
+  .logo {
+    display: none;
     margin-left: 0;
   }
 }

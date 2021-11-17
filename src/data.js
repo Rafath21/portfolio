@@ -2,8 +2,8 @@ let data=[
     {
         "serialNo":"01. ",
         "projectTitle":"Crime Mapper",
-        "goal":`The goal of this website is to help police officials track crime rates in their respective areas.The GIS feature gets you the crime data based on the location you select. Data Visualization has also been added so that the crime categories can be easily compared and respective actions can be taken. For example, if the rate of thefts is high in an area compared to other crime types then the cops need to look out for thiefs more in that area.`,
-        "features":[" This web app lets police officials increase the count of crimes in an area whenever new cases are reported. This data can either just be a date on which the crime happened or additional details like time and place of the incident can also be added. An API at the backend accepts this data and adds it to the database. For implementation purpose, Puppeteer, an automation tool has been used to send multiple requests to the backend and the frontend had been made read-only."],
+        "goal":`The goal of this website is to help police officials track crime rates.The GIS feature gets you the crime data based on the location you select. Data Visualization has also been added so that the crime categories can be easily compared and respective actions can be taken. For example, if the rate of thefts is high in an area compared to other crime types then the cops need to look out for thiefs more in that area.`,
+        "features":[`This web app lets police officials increase the count of crimes (in the database) in an area whenever new cases are reported. This data can either just be a date on which the crime happened or additional details like time and place of the incident can also be added. An API at the backend accepts this data and adds it to the database. For implementation purpose, Puppeteer, an automation tool has been used to send multiple requests to the backend.`],
         "stackUsed":["./reactjs.png","./nodejs.png","./mongodb.png","./expressjs.png"],
         "video":"./crime-mapper.mp4",
         "links":["https://github.com/Rafath21/crime-mapper-mern","https://crime-mapper.herokuapp.com/"]
@@ -29,7 +29,7 @@ let data=[
       {
         "serialNo":"04. ",
         "projectTitle":"Apple website - clone",
-        "goal":"I built this web app when I had just started learning Reactjs with the aim to learn how exactly ReactJS, components, and hooks worked. This was a great project to practice my frontend skills and I would 100% recommend making an e-commerce-clone to anyone who wants to master reactjs.",
+        "goal":"I built this web app when I had just started learning Reactjs with the aim to learn how exactly  components and hooks worked. This was a great project to practice my frontend skills and I would 100% recommend making an e-commerce-clone to anyone who wants to master reactjs.",
         "features":["Add to Bag","Stripe payment Integration","Google authentication with firebase","Carousels","Responsive","See all orders"],
         "stackUsed":["./reactjs.png","./firebase.png"],
         "video":"./apple-clone.mp4",

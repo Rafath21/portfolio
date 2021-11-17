@@ -113,6 +113,7 @@ const Home = () => {
           }}
         />
         <nav className={menuOpen ? "nav-links active" : "nav-links"}>
+          <img src="./logo.jpeg" className="logo" />
           <a href="#projects">
             <li>Projects</li>
           </a>
@@ -142,6 +143,7 @@ const Home = () => {
                 use code to bring to life the ideas that can have a great and
                 positive impact on people's lives.
               </div>
+              <button>Resume</button>
             </div>
           </div>
         </a>
@@ -218,9 +220,17 @@ const Home = () => {
               possible to make sure it doesn't crash at any point in time. With
               the wide range of projects I've built <b>over the past 3 years</b>
               , I learned the art of solving unexpected errors and handling them
-              so that the user knows what went wrong and where. I also make sure
-              the code is <b>readable, clean, and maintainable</b> for other
-              developers to understand with ease. Also, I took my developer
+              so that the user knows what went wrong and where. An example of
+              which can be found{" "}
+              <a
+                href="https://github.com/Rafath21/instagram-clone-firebase/blob/main/tests.txt"
+                target="_blank"
+              >
+                here
+              </a>
+              . I also make sure the code is{" "}
+              <b>readable, clean, and maintainable</b> for other developers to
+              understand with ease. Also, I took my developer
               <b>
                 {" "}
                 training from industry experts at{" "}
@@ -304,6 +314,8 @@ const Home = () => {
           </a>
         </div>
       </div>
+      <p className="madeby">Made by Rafath with ❤ and Reactjs.</p>
+      <p className="copyright">Copyright &copy; 2021. All rights reserved.</p>
     </div>
   );
 };
