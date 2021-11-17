@@ -293,7 +293,10 @@ const Home = () => {
       <div className="cta">
         <header>Also find me on:</header>
         <div className="connection-links">
-          <a href="" target="_blank">
+          <a
+            href="https://twitter.com/rafathsweb?t=9qiD6P0gHQglsZnoVxfl2w&s=08"
+            target="_blank"
+          >
             <img
               src="./twitter-logo.png"
               className="twitter-logo"
@@ -303,13 +306,16 @@ const Home = () => {
           <a href="" target="_blank">
             <img src="./linkedin-logo.png" title="Rafath's linkedIn" />
           </a>
-          <a href="" target="_blank">
+          <a href="https://www.instagram.com/ob_liv_ious71/" target="_blank">
             <img src="./instagram-logo.png" title="Rafath's instagram" />
           </a>
-          <a href="" target="_blank">
+          <a
+            href="https://www.facebook.com/profile.php?id=100075021013638"
+            target="_blank"
+          >
             <img src="./facebook-logo.png" title="Rafath's facebook" />
           </a>
-          <a href="" target="_blank">
+          <a href="https://github.com/Rafath21" target="_blank">
             <img src="./github-footer-logo.png" title="Rafath's github" />
           </a>
         </div>
