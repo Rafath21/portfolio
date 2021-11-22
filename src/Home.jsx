@@ -171,6 +171,21 @@ const Home = () => {
                     <>
                       <h5>Goal:</h5>
                       <p>{project.goal}</p>
+                      {project.projectTitle == "Social Media - clone" ? (
+                        <>
+                          <p>
+                            The firebase version of this add can be found
+                            <a
+                              target="_blank"
+                              href="https://instagram-clone-dfad6.web.app/"
+                            >
+                              here
+                            </a>
+                          </p>
+                        </>
+                      ) : (
+                        ""
+                      )}
                       <h5>Features:</h5>
                       <ul>
                         {project.features.map((feature) => {
