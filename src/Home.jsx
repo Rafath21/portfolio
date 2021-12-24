@@ -112,7 +112,7 @@ const Home = () => {
           }}
         />
         <nav className={menuOpen ? "nav-links active" : "nav-links"}>
-          <img src="./logo.jpeg" className="logo" />
+          <img src="./new-logo.png" className="logo" />
           <a href="#projects">
             <li>Projects</li>
           </a>
@@ -143,7 +143,7 @@ const Home = () => {
                 positive impact on people's lives.
               </div>
               <a
-                href="https://drive.google.com/file/d/1hfCka-BQbs0zDFxfTx-Im-NQR6utjOxf/view?usp=sharing"
+                href="https://drive.google.com/file/d/1OUpahYEGJ7Wmqb16gNnjZBFEPMmFlARv/view?usp=sharing"
                 target="_blank"
               >
                 <button>Resume</button>
@@ -164,28 +164,15 @@ const Home = () => {
                   </header>
                   <div className="stack-used">
                     {project.stackUsed.map((stack) => {
-                      return <img src={stack}></img>;
+                      let title = stack.split(".")[1];
+                      title = title.split("/")[1];
+                      return <img src={stack} title={title}></img>;
                     })}
                   </div>
                   <div className="project-details">
                     <>
                       <h5>Goal:</h5>
                       <p>{project.goal}</p>
-                      {project.projectTitle == "Social Media - clone" ? (
-                        <>
-                          <p>
-                            The firebase version of this add can be found
-                            <a
-                              target="_blank"
-                              href="https://instagram-clone-dfad6.web.app/"
-                            >
-                              here
-                            </a>
-                          </p>
-                        </>
-                      ) : (
-                        ""
-                      )}
                       <h5>Features:</h5>
                       <ul>
                         {project.features.map((feature) => {
@@ -194,6 +181,7 @@ const Home = () => {
                       </ul>
                     </>
                   </div>
+
                   <div className="project-links">
                     <a href={project.links[0]} target="_blank">
                       <img
@@ -210,6 +198,22 @@ const Home = () => {
                       />
                     </a>
                   </div>
+                  <br></br>
+                  {project.projectTitle == "Social Media - clone" ? (
+                    <>
+                      <p className="firebase-link">
+                        The firebase version of this website can be found
+                        <a
+                          target="_blank"
+                          href="https://instagram-clone-dfad6.web.app/"
+                        >
+                          here
+                        </a>
+                      </p>
+                    </>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className="project-video">
                   <video controls muted autoplay="true" loop="true">
@@ -238,7 +242,7 @@ const Home = () => {
               application, comes a huge responsibility of solving problems
               efficiently and making it as robust as possible to make sure it
               doesn't crash at any point in time. With the wide range of
-              projects I've built <b>over the past 3 years</b>, I learned the
+              projects I've built <b>over the past 3 years</b>, I've learned the
               art of solving unexpected errors and handling them so that the
               user knows what went wrong and where. An example of which can be
               found{" "}
@@ -273,7 +277,19 @@ const Home = () => {
               feeling when you know the project you built can help millions of
               people out there. After all, programming is just a tool, the real
               challenge is to solve problems that we face in our day-to-day
-              lives.
+              lives.<br></br>
+              As a student, I was also a part of the Governing body of{" "}
+              <b>Computer Society of India, MJCET</b>. This gave me a lot of
+              opportunities to organize technical events and hackathons at
+              college with hunderds of students participating. I've served as
+              the{" "}
+              <a
+                target="_blank"
+                href="https://drive.google.com/file/d/1h5bqlkLc-Vx5mk7NKj6UQrEcz9fUAqod/view?usp=sharing"
+              >
+                Bulletin
+              </a>{" "}
+              and Editorial Head of the department for 2 years.
             </div>
             <div className="about-me-picture">
               <img src="./rafath.jpg" className="myImg" />
