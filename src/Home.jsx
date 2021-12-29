@@ -339,7 +339,7 @@ const Home = () => {
               title="Rafath's twitter"
             />
           </a>
-          <a href="" target="_blank">
+          <a href="https://www.linkedin.com/in/rafath-unnisa-45b0bb227/" target="_blank">
             <img src="./linkedin-logo.png" title="Rafath's linkedIn" />
           </a>
           <a href="https://www.instagram.com/ob_liv_ious71/" target="_blank">
