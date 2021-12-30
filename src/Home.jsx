@@ -242,8 +242,8 @@ const Home = () => {
               application, comes a huge responsibility of solving problems
               efficiently and making it as robust as possible to make sure it
               doesn't crash at any point in time. With the wide range of
-              projects I've built <b>over the past 3 years</b>, I've learned the
-              art of solving unexpected errors and handling them so that the
+              projects I've built <b>over the past 4-5 years</b>, I've learned
+              the art of solving unexpected errors and handling them so that the
               user knows what went wrong and where. An example of which can be
               found{" "}
               <a
@@ -261,7 +261,7 @@ const Home = () => {
                 <a href="https://pepcoding.com/" target="_blank">
                   Pepcoding
                 </a>{" "}
-                for 10 months
+                for about a year
               </b>{" "}
               in my last year of Engineering which enabled me to gain enough
               skills to make usable and maintainable full-stack applications.
@@ -339,7 +339,10 @@ const Home = () => {
               title="Rafath's twitter"
             />
           </a>
-          <a href="https://www.linkedin.com/in/rafath-unnisa-45b0bb227/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/rafath-unnisa-45b0bb227/"
+            target="_blank"
+          >
             <img src="./linkedin-logo.png" title="Rafath's linkedIn" />
           </a>
           <a href="https://www.instagram.com/ob_liv_ious71/" target="_blank">
