@@ -292,7 +292,7 @@ const Home = () => {
               and Editorial Head of the department for 2 years.
             </div>
             <div className="about-me-picture">
-              <img src="./rafath.jpg" className="myImg" />
+//               <img src="./rafath.jpg" className="myImg" />
             </div>
           </div>
         </div>
